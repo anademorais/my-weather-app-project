@@ -20,30 +20,45 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="weather-app">
-				<h1>Lisbon</h1>
-				<ul>
-					<li>Friday 05:00</li>
-					<li>Clear</li>
-				</ul>
-				<div class="row">
-					<div class="col-6">
-						<img
-							src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-							alt="clear" />
-						12°C | °F
-					</div>
-					<div class="col-6">
+			<div class="weather-app-wrapper">
+				<div class="weather-app">
+					<div class="overview">
+						<h1>Lisbon</h1>
 						<ul>
-							<li>Precipitation: 0%</li>
-							<li>Humidity: 73%</li>
-							<li>Wind: 2Km/h</li>
+							<li>Friday 05:00</li>
+							<li>Clear</li>
 						</ul>
+						<div class="row">
+							<div class="col-6">
+								<div class="d-flex weather-temperature">
+									<img
+										src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+										alt="clear"
+										id="icon"
+										class="float-left" />
+									<div class="float-left">
+										<strong>12</strong>
+										<span class="units">°C | <a href="#">°F</a></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<ul>
+									<li>Precipitation: 0%</li>
+									<li>Humidity: 73%</li>
+									<li>Wind: 2Km/h</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 				<small>
 					This project was coded by Ana de Morais
-					<a href="#" target="_blank">open-sourced on GitHub</a>
+					<a
+						href="https://github.com/anademorais/my-weather-app-project"
+						target="_blank"
+						>open-sourced on GitHub</a
+					>
 					and hosted in
 					<a href="#" target="_blank">Netlify.</a>
 				</small>
