@@ -16,6 +16,7 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
 			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 		<link rel="stylesheet" href="src/styles.css" />
 	</head>
 	<body>
@@ -23,10 +24,28 @@
 			<div class="weather-app-wrapper">
 				<div class="weather-app">
 					<div class="overview">
-						<h1>Lisbon</h1>
+						<form>
+							<div class="row">
+								<div class="col-9">
+									<input
+										type="search"
+										placeholder="Enter a city..."
+										class="form-control search-input"
+										id="search-input" />
+								</div>
+								<div class="col-3 p-0">
+									<input
+										type="submit"
+										class="btn btn-primary w-100"
+										value="search"
+										id="btn" />
+								</div>
+							</div>
+						</form>
+						<h1 id="city"></h1>
 						<ul>
 							<li>Friday 05:00</li>
-							<li>Clear</li>
+							<li id="description"></li>
 						</ul>
 						<div class="row">
 							<div class="col-6">
@@ -37,16 +56,15 @@
 										id="icon"
 										class="float-left" />
 									<div class="float-left">
-										<strong>12</strong>
+										<strong id="temperature"></strong>
 										<span class="units">°C | <a href="#">°F</a></span>
 									</div>
 								</div>
 							</div>
 							<div class="col-6">
 								<ul>
-									<li>Precipitation: 0%</li>
-									<li>Humidity: 73%</li>
-									<li>Wind: 2Km/h</li>
+									<li>Humidity: <span id="humidity"></span>%</li>
+									<li>Wind: <span id="wind"></span>Km/h</li>
 								</ul>
 							</div>
 						</div>
@@ -64,6 +82,6 @@
 				</small>
 			</div>
 		</div>
-		<script src="scr/app.js"></script>
+		<script src="src/app.js"></script>
 	</body>
 </html>
