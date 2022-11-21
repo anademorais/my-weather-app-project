@@ -13,7 +13,7 @@ function formatDate(timestamp) {
 		"Monday",
 		"Tuesday",
 		"Wednesday",
-		"Thrusday",
+		"Thursday",
 		"Friday",
 		"Saturday",
 	];
@@ -61,7 +61,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-	console.log(coordinates);
 	let apiKey = "4c9b53e4f8f5eb00df5915bdca340605";
 	let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 	axios.get(apiUrl).then(displayForecast);
@@ -104,32 +103,8 @@ function handleSubmit(event) {
 	let cityInputElement = document.querySelector("#city-input");
 	search(cityInputElement.value);
 }
-function displayFahrenheitTemperature(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector("#temperature");
-	celsiusLink.classList.remove("active");
-	fahrenheitLink.classList.add("active");
-	let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-	temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector("#temperature");
-	celsiusLink.classList.add("active");
-	fahrenheitLink.classList.remove("active");
-	temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Lisbon");
